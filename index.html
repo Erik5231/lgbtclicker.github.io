@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="intervalMoney(), hideCheat()">
+    <script src="script.js"></script>
+    <div class="header">
+        <span class="bigHeader">LGBT CLICKER</span>
+        <h1>QUEERS: <span id="money">0</span>&#9895</h1>
+    </div>
+    <button id="lgbtButton" class="lgbtButton center-element" onclick="addMoney(ammount)">
+        +&#9895;
+    </button>
+    <div id="lgbtClick" class="center-element">
+        +&#9895;
+    </div>
+    <div id="store">
+        <button onclick="buyUpgrade1()">
+            <b>Multi-Click x<span id="upgrades">0</span></b><br>
+            costs: <span id="upgradePrice">50</span>&#9895;
+        </button>
+        <button onclick="buyAutoclicker1()">
+            <b>Autoclicker x<span id="upgradesAutoclicker">0</span></b><br>
+            costs: <span id="upgradePriceAutoclicker">125</span>&#9895;
+        </button>
+    </div>
+    <br>
+    <div class="hiddenDiv">
+        <button id="cheatButton" onclick="cheat()">
+            Menší boost
+        </button>
+    </div>
+    <script>
+        document.addEventListener("keydown", function () {
+            var x = event.keyCode || event.which;
+            if (x == 13) {
+                var y = document.getElementById("cheatButton");
+                if (y.style.display === "none") {
+                    document.getElementById("cheatButton").style.display = "block";
+                }
+                else {
+                    document.getElementById("cheatButton").style.display = "none";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

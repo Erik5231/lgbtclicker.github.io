@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --color-hue: 310;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body, html {
+    background: #e9e9e9;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+    font-size: 18px;
+    top: 0;
+    position: relative;
+    border: 5px solid black;
+    width: 200px;
+    height: 100px;
+    background-color: hsl(var(--color-hue), 80%, 40%);
+    box-shadow: 0 10px 0 -5px hsl(var(--color-hue), 80%, 20%), 0 10px 0 0 black;
+    border-radius: 20px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+button:hover {
+    top: 10px;
+    box-shadow: 0 0 0 -5px hsl(var(--color-hue), 80%, 20%), 0 0 0 0 black;
+}
+
+button:active {
+    box-shadow: 0 0 0 2px black;
+}
+
+.center-element {
+    position: absolute;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.bigHeader {
+    font-weight: 800;
+    font-size: 48px;
+}
+
+.lgbtButton {
+    background: linear-gradient(180deg, #FE0000 16.66%, #FD8C00 16.66%, 33.32%, #FFE500 33.32%, 49.98%, #119F0B 49.98%, 66.64%, #0644B3 66.64%, 83.3%, #C22EDC 83.3%);
+    width: 300px;
+    height: 200px;
+    z-index: 8;
+}
+
+.lgbtButton, #lgbtClick {
+    position: absolute;
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0);
+    font-size: 128px;
+    font-weight: bold;
+}
+
+#lgbtClick {
+    margin-top: 10px;
+    pointer-events: none;
+    z-index: 9;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+.lgbtButton:hover {
+    margin-top: 10px;
+}
+
+.lgbtButton:active {
+    color: rgba(255, 255, 255, 1);
+}
+
+.hiddenDiv {
+    width: 100%;
+    text-align: center;
+}
+
+#store {
+    padding: 50px;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+#cheatButton {
+    display: none;
+    margin: 0 auto;
+}
