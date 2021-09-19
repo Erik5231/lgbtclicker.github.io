@@ -28,7 +28,7 @@ button {
     top: 0;
     position: relative;
     border: 5px solid black;
-    width: 200px;
+    width: 235px;
     height: 100px;
     background-color: hsl(var(--color-hue), 80%, 40%);
     box-shadow: 0 10px 0 -5px hsl(var(--color-hue), 80%, 20%), 0 10px 0 0 black;
@@ -109,4 +109,12 @@ button:active {
 #cheatButton {
     display: none;
     margin: 0 auto;
+    background: linear-gradient(180deg, #FE0000 16.66%, #FD8C00 16.66%, 33.32%, #FFE500 33.32%, 49.98%, #119F0B 49.98%, 66.64%, #0644B3 66.64%, 83.3%, #C22EDC 83.3%);
+}
+
+.ind:active{
+    background: url("img/cika.jpeg") no-repeat;
+}
+.lgtext{
+    color:black;
 }

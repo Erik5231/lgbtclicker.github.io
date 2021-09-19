@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie clicker</title>
+    <title>LGBT clicker</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
 </head>
 
 <body onload="intervalMoney(), hideCheat()">
@@ -18,23 +21,33 @@
     <button id="lgbtButton" class="lgbtButton center-element" onclick="addMoney(ammount)">
         +&#9895;
     </button>
+    
     <div id="lgbtClick" class="center-element">
         +&#9895;
     </div>
+    
     <div id="store">
         <button onclick="buyUpgrade1()">
-            <b>Multi-Click x<span id="upgrades">0</span></b><br>
+            <b>Multi-Queer x<span id="upgrades">0</span></b><br>
             costs: <span id="upgradePrice">50</span>&#9895;
         </button>
         <button onclick="buyAutoclicker1()">
-            <b>Autoclicker x<span id="upgradesAutoclicker">0</span></b><br>
+            <b>Auto-Queer x<span id="upgradesAutoclicker">0</span></b><br>
             costs: <span id="upgradePriceAutoclicker">125</span>&#9895;
+        </button>
+        <button onclick="buyGender()">
+            <b>GenderFluid x<span id="upgradesGender">0</span></b><br>
+            costs: <span id="upgradePricegender">1500</span>&#9895;
+        </button>
+        <button class="ind" onclick="buyInadaptable()">
+            <b>Inadaptable-Homophobe</b><br>
+            costs: <span id="inadaptablePrice">Absolutely Free</span>
         </button>
     </div>
     <br>
     <div class="hiddenDiv">
         <button id="cheatButton" onclick="cheat()">
-            Menší boost
+            <b class="lgtext">Welcome to LGBT Family<3</b>
         </button>
     </div>
     <script>
