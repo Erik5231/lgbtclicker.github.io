@@ -113,7 +113,7 @@ button:active {
 }
 
 .ind:active{
-    background: url("img/cika.jpeg") no-repeat;
+    background: url("cika.jpeg") no-repeat;
 }
 .lgtext{
     color:black;
