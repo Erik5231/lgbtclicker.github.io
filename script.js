@@ -3,22 +3,29 @@ let money = 0;
 let upgradePrice = 50;
 let upgrades = 0;
 let ammount = 1;
+let ammountAutoqueer = 0;
 
 let upgradePriceAutoclicker = 125;
 let upgradesAutoclicker = 0;
 let ammountAutoclicker = 0;
 
-let inadaptablePrice = 0;
-
 let upgradePricegender = 1500;
 let upgradesGender = 0;
 let ammountAutoclickergender = 0;
 
+let menuSwitch = 0;
+
+
+function changeText() { 
+   let change = document.getElementById("cheatButton");
+   change.innerHTML = "We appreciate your support!";
+}
+
 function cheat() {
-    if (money < 99999) {
         money = + 99999;
         updateMoney();
-    }
+        var audio = new Audio('dobryDen.mp3');
+        audio.play();
 }
 
 function addMoney(ammount) {
@@ -27,14 +34,26 @@ function addMoney(ammount) {
 }
 
 function intervalMoney() {
-    money = money + ammountAutoclicker;
-    if (ammountAutoclicker > 0) {
+    money = money + ammountAutoclicker + ammountAutoclickergender + ammountAutoqueer;
+    if (ammountAutoclicker > 0 || ammountAutoclickergender > 0 || ammountAutoqueer > 0) {
         document.getElementById("lgbtClick").style.color = "rgba(255,255,255,1)";
         setTimeout(clearFont, 200);
     }
-    setTimeout(intervalMoney, 1000);
+    setTimeout(intervalMoney, 400);
     updateMoney();
 }
+
+/*
+function intervalMoney2 () {
+    money = money + ammountAutoclickergender;
+    if (ammountAutoclickergender > 0) {
+        document.getElementById("lgbtClick").style.color = "rgba(255,255,255,1)";
+        setTimeout(clearFont, 200);
+    }
+    setTimeout(intervalMoney2, 1000);
+    updateMoney();
+}
+*/
 
 function clearFont() {
     document.getElementById("lgbtClick").style.color = "rgba(255,255,255,0)";
@@ -42,7 +61,7 @@ function clearFont() {
 
 function buyAutoclicker1() {
     if (money >= upgradePriceAutoclicker) {
-        ammountAutoclicker = ammountAutoclicker + 1;
+        ammountAutoclicker = ammountAutoclicker + 5;
         money = money - upgradePriceAutoclicker;
         upgradePriceAutoclicker = upgradePriceAutoclicker + 160;
         upgradesAutoclicker++;
@@ -55,6 +74,7 @@ function buyAutoclicker1() {
 function buyUpgrade1() {
     if (money >= upgradePrice) {
         ammount = ammount + 1;
+        ammountAutoqueer = ammountAutoqueer + 1;
         money = money - upgradePrice;
         upgradePrice = upgradePrice + 80;
         upgrades++;
@@ -69,16 +89,15 @@ function updateMoney() {
 }
 
 function buyInadaptable() {
-    if(money >= inadaptablePrice) {
         money = money - 100;
-        document.getElementById("inadaptablePrice").innerHTML = inadaptablePrice;
+        var audio = new Audio('ja.mp3');
+        audio.play();
         updateMoney();
-    }
 }
 
 function buyGender() {
     if(money >= upgradePricegender) {
-        ammountAutoclickergender = ammountAutoclickergender + 1;
+        ammountAutoclickergender = ammountAutoclickergender + 20;
         money = money - upgradePricegender;
         upgradePricegender = upgradePricegender + 1750;
         upgradesGender++;
@@ -88,12 +107,19 @@ function buyGender() {
     updateMoney();
 }
 
-function intervalMoney2 () {
-    money = money + ammountAutoclickergender;
-    if (ammountAutoclickergender > 0) {
-        document.getElementById("lgbtClick").style.color = "rgba(255,255,255,1)";
-        setTimeout(clearFont, 200);
+function menuShow() {
+    if (menuSwitch === 0) {
+        document.getElementById("store").style.left = "0";
+        document.getElementById("burgir").style.left = "0";
+        menuSwitch = 1;
+    } else {
+        document.getElementById("store").style.left = "100%";
+        document.getElementById("burgir").style.left = "-64px";
+        menuSwitch = 0;
     }
-    setTimeout(intervalMoney2, 1000);
-    updateMoney();
+}
+
+function playAudio() {
+    var audio = new Audio('dobryDen.mp3');
+    audio.play();
 }

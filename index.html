@@ -7,12 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LGBT clicker</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="lgbtclicker.github.io/img/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="lgbtclicker.github.io/img/favicon-16x16.png" sizes="16x16" />
-
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
-<body onload="intervalMoney(), hideCheat()">
+<body onload="intervalMoney(), hideCheat(), intervalMoney2(), playAudio()">
     <script src="script.js"></script>
     <div class="header">
         <span class="bigHeader">LGBT CLICKER</span>
@@ -21,12 +35,15 @@
     <button id="lgbtButton" class="lgbtButton center-element" onclick="addMoney(ammount)">
         +&#9895;
     </button>
-    
+
     <div id="lgbtClick" class="center-element">
         +&#9895;
     </div>
-    
+
     <div id="store">
+        <div id="burgir" onclick="menuShow()">
+            &#9791;
+        </div>
         <button onclick="buyUpgrade1()">
             <b>Multi-Queer x<span id="upgrades">0</span></b><br>
             costs: <span id="upgradePrice">50</span>&#9895;
@@ -46,7 +63,7 @@
     </div>
     <br>
     <div class="hiddenDiv">
-        <button id="cheatButton" onclick="cheat()">
+        <button id="cheatButton" onclick="cheat(), changeText(), this.disabled = true">
             <b class="lgtext">Welcome to LGBT Family<3</b>
         </button>
     </div>
