@@ -27,45 +27,47 @@
 </head>
 
 <body onload="intervalMoney(), hideCheat(), intervalMoney2(), playAudio()">
-    <script src="script.js"></script>
-    <div class="header">
-        <span class="bigHeader">LGBT CLICKER</span>
-        <h1>QUEERS: <span id="money">0</span>&#9895</h1>
-    </div>
-    <button id="lgbtButton" class="lgbtButton center-element" onclick="addMoney(ammount)">
-        +&#9895;
-    </button>
-
-    <div id="lgbtClick" class="center-element">
-        +&#9895;
-    </div>
-
-    <div id="store">
-        <div id="burgir" onclick="menuShow()">
-            &#9791;
+    <div class="container">
+        <script src="script.js"></script>
+        <div class="header">
+            <span class="bigHeader">LGBT CLICKER</span>
+            <h1>QUEERS: <span id="money">0</span>&#9895</h1>
         </div>
-        <button onclick="buyUpgrade1()">
-            <b>Multi-Queer x<span id="upgrades">0</span></b><br>
-            costs: <span id="upgradePrice">50</span>&#9895;
+        <button id="lgbtButton" class="lgbtButton center-element" onclick="addMoney(ammount)">
+            +&#9895;
         </button>
-        <button onclick="buyAutoclicker1()">
-            <b>Auto-Queer x<span id="upgradesAutoclicker">0</span></b><br>
-            costs: <span id="upgradePriceAutoclicker">125</span>&#9895;
-        </button>
-        <button onclick="buyGender()">
-            <b>GenderFluid x<span id="upgradesGender">0</span></b><br>
-            costs: <span id="upgradePricegender">1500</span>&#9895;
-        </button>
-        <button class="ind" onclick="buyInadaptable()">
-            <b>Inadaptable-Homophobe</b><br>
-            costs: <span id="inadaptablePrice">Absolutely Free</span>
-        </button>
-    </div>
-    <br>
-    <div class="hiddenDiv">
-        <button id="cheatButton" onclick="cheat(), changeText(), this.disabled = true">
-            <b class="lgtext">Welcome to LGBT Family<3</b>
-        </button>
+
+        <div id="lgbtClick" class="center-element">
+            +&#9895;
+        </div>
+
+        <div id="store">
+            <div id="burgir" onclick="menuShow()">
+                &#9791;
+            </div>
+            <button onclick="buyUpgrade1()">
+                <b>Multi-Queer x<span id="upgrades">0</span></b><br>
+                costs: <span id="upgradePrice">50</span>&#9895;
+            </button>
+            <button onclick="buyAutoclicker1()">
+                <b>Auto-Queer x<span id="upgradesAutoclicker">0</span></b><br>
+                costs: <span id="upgradePriceAutoclicker">125</span>&#9895;
+            </button>
+            <button onclick="buyGender()">
+                <b>GenderFluid x<span id="upgradesGender">0</span></b><br>
+                costs: <span id="upgradePricegender">1500</span>&#9895;
+            </button>
+            <button class="ind" onclick="buyInadaptable()">
+                <b>Inadaptable-Homophobe</b><br>
+                costs: <span id="inadaptablePrice">Absolutely Free</span>
+            </button>
+        </div>
+        <br>
+        <div class="hiddenDiv">
+            <button id="cheatButton" onclick="cheat(), changeText(), this.disabled = true">
+                <b class="lgtext">Welcome to LGBT Family<3< /b>
+            </button>
+        </div>
     </div>
     <script>
         document.addEventListener("keydown", function () {
