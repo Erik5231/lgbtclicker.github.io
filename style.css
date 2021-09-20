@@ -23,6 +23,11 @@ body, html {
     padding: 0;
 }
 
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
 button {
     cursor: pointer;
     font-size: 18px;
