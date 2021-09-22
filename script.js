@@ -63,7 +63,7 @@ function buyAutoclicker1() {
     if (money >= upgradePriceAutoclicker) {
         ammountAutoclicker = ammountAutoclicker + 5;
         money = money - upgradePriceAutoclicker;
-        upgradePriceAutoclicker = upgradePriceAutoclicker + 160;
+        upgradePriceAutoclicker = upgradePriceAutoclicker + 240;
         upgradesAutoclicker++;
         document.getElementById("upgradePriceAutoclicker").innerHTML = upgradePriceAutoclicker;
         document.getElementById("upgradesAutoclicker").innerHTML = upgradesAutoclicker;
@@ -97,9 +97,9 @@ function buyInadaptable() {
 
 function buyGender() {
     if(money >= upgradePricegender) {
-        ammountAutoclickergender = ammountAutoclickergender + 20;
+        ammountAutoclickergender = ammountAutoclickergender + 25;
         money = money - upgradePricegender;
-        upgradePricegender = upgradePricegender + 1750;
+        upgradePricegender = upgradePricegender + 2250;
         upgradesGender++;
         document.getElementById("upgradePricegender").innerHTML = upgradePricegender;
         document.getElementById("upgradesGender").innerHTML = upgradesGender;
@@ -119,7 +119,7 @@ function menuShow() {
     }
 }
 
-function playAudio() {
+/*function playAudio() {
     var audio = new Audio('dobryDen.mp3');
     audio.play();
-}
+}*/
