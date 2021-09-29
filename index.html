@@ -26,12 +26,14 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body onload="intervalMoney(), hideCheat(), intervalMoney2(), playAudio()">
+<body onload="intervalMoney(), intervalMoney2(), playAudio(), load()">
     <div class="container">
         <script src="script.js"></script>
         <div class="header">
             <span class="bigHeader">LGBT CLICKER</span>
-            <h1>QUEERS: <span id="money">0</span>&#9895</h1>
+           <h1>QUEERS: <span id="money">0</span>&#9895</h1>
+            <div class="ps">per second: <span id="qps">0</span></div>
+            <div class="pc">per click: <span id="qpc">1</span></div>
         </div>
         <button id="lgbtButton" class="lgbtButton center-element" onclick="addMoney(ammount)">
             +&#9895;
@@ -45,21 +47,33 @@
             <div id="burgir" onclick="menuShow()">
                 &#9791;
             </div>
-            <button onclick="buyUpgrade1()">
+            <h1 class="mobileBlock">QUEERS: <span id="money2">0</span>&#9895</h1>
+            <div class="ps mobileBlock">per second: <span id="qps2">0</span></div>
+            <div class="pc mobileBlock">per click: <span id="qpc2">1</span></div>
+            <br>
+            <img src="img/radman_error.png" height="160" id="raderror" onclick="hideRadek()"/>
+            <br>
+            <button class="sbutton" onclick="buyUpgrade1()">
                 <b>Multi-Queer x<span id="upgrades">0</span></b><br>
+                +1QPS, 1QPC
+                <br>
                 costs: <span id="upgradePrice">50</span>&#9895;
             </button>
-            <button onclick="buyAutoclicker1()">
+            <button class="sbutton" onclick="buyAutoclicker1()">
                 <b>Auto-Queer x<span id="upgradesAutoclicker">0</span></b><br>
-                costs: <span id="upgradePriceAutoclicker">125</span>&#9895;
+                +5QPS
+                <br>
+                costs: <span id="upgradePriceAutoclicker">350</span>&#9895;
             </button>
-            <button onclick="buyGender()">
+            <button class="sbutton" onclick="buyGender()">
                 <b>GenderFluid x<span id="upgradesGender">0</span></b><br>
-                costs: <span id="upgradePricegender">1500</span>&#9895;
+                +20QPS, 5QPC
+                <br>
+                costs: <span id="upgradePricegender">2250</span>&#9895;
             </button>
-            <button class="ind" onclick="buyInadaptable()">
+            <button class="ind sbutton" onclick="buyInadaptable()">
                 <b>Inadaptable-Homophobe</b><br>
-                costs: <span id="inadaptablePrice">Absolutely Free</span>
+                <span id="inadaptablePrice">Absolutely Free</span>
             </button>
         </div>
         <br>

@@ -5,13 +5,17 @@ let upgrades = 0;
 let ammount = 1;
 let ammountAutoqueer = 0;
 
-let upgradePriceAutoclicker = 125;
+let upgradePriceAutoclicker = 350;
 let upgradesAutoclicker = 0;
 let ammountAutoclicker = 0;
 
-let upgradePricegender = 1500;
+let upgradePricegender = 2250;
 let upgradesGender = 0;
 let ammountAutoclickergender = 0;
+
+
+let qps = 0;
+let qpc = 1;
 
 let menuSwitch = 0;
 
@@ -39,8 +43,9 @@ function intervalMoney() {
         document.getElementById("lgbtClick").style.color = "rgba(255,255,255,1)";
         setTimeout(clearFont, 200);
     }
-    setTimeout(intervalMoney, 400);
+    setTimeout(intervalMoney, 1000);
     updateMoney();
+    save();
 }
 
 /*
@@ -63,12 +68,16 @@ function buyAutoclicker1() {
     if (money >= upgradePriceAutoclicker) {
         ammountAutoclicker = ammountAutoclicker + 5;
         money = money - upgradePriceAutoclicker;
-        upgradePriceAutoclicker = upgradePriceAutoclicker + 240;
+        upgradePriceAutoclicker = upgradePriceAutoclicker + 380;
         upgradesAutoclicker++;
         document.getElementById("upgradePriceAutoclicker").innerHTML = upgradePriceAutoclicker;
         document.getElementById("upgradesAutoclicker").innerHTML = upgradesAutoclicker;
+        qps = qps + 5;
+    } else {
+        showRadek();
     }
     updateMoney();
+    QPS();
 }
 
 function buyUpgrade1() {
@@ -76,16 +85,22 @@ function buyUpgrade1() {
         ammount = ammount + 1;
         ammountAutoqueer = ammountAutoqueer + 1;
         money = money - upgradePrice;
-        upgradePrice = upgradePrice + 80;
+        upgradePrice = upgradePrice + 205;
         upgrades++;
         document.getElementById("upgradePrice").innerHTML = upgradePrice;
         document.getElementById("upgrades").innerHTML = upgrades;
+        qpc = qpc + 1;
+        qps = qps + 1;
         updateMoney();
+        QPS();
+    } else {
+        showRadek();
     }
 }
 
 function updateMoney() {
     document.getElementById("money").innerHTML = money;
+    document.getElementById("money2").innerHTML = money;
 }
 
 function buyInadaptable() {
@@ -93,18 +108,25 @@ function buyInadaptable() {
         var audio = new Audio('ja.mp3');
         audio.play();
         updateMoney();
+        QPS();
 }
 
 function buyGender() {
     if(money >= upgradePricegender) {
-        ammountAutoclickergender = ammountAutoclickergender + 25;
+        ammountAutoclickergender = ammountAutoclickergender + 20;
         money = money - upgradePricegender;
-        upgradePricegender = upgradePricegender + 2250;
+        upgradePricegender = upgradePricegender + 2550;
         upgradesGender++;
+        ammount = ammount + 5;
         document.getElementById("upgradePricegender").innerHTML = upgradePricegender;
         document.getElementById("upgradesGender").innerHTML = upgradesGender;
+        qps = qps + 20;
+        qpc = qpc + 5;
+    } else {
+        showRadek();
     }
     updateMoney();
+    QPS();
 }
 
 function menuShow() {
@@ -119,7 +141,75 @@ function menuShow() {
     }
 }
 
+function QPS() {
+    document.getElementById("qps").innerHTML = qps;
+    document.getElementById("qpc").innerHTML = qpc;
+    document.getElementById("qps2").innerHTML = qps;
+    document.getElementById("qpc2").innerHTML = qpc;
+}
+
+function showRadek() {
+    document.getElementById("raderror").style.display = "inline";
+    document.getElementById("raderror").style.opacity = "1";
+    var audio = new Audio('perkele.mp3');
+    audio.play();
+}
+
+function hideRadek() {
+    document.getElementById("raderror").style.display = "none";
+    document.getElementById("raderror").style.opacity = "0";
+}
+
 /*function playAudio() {
     var audio = new Audio('dobryDen.mp3');
     audio.play();
 }*/
+
+
+
+function save() {
+    localStorage.setItem("earnedMoney", money);
+    localStorage.setItem("upgradePrice", upgradePrice);
+    localStorage.setItem("upgrades", upgrades);
+    localStorage.setItem("ammount", ammount);
+    localStorage.setItem("ammountAutoqueer", ammountAutoqueer);
+    localStorage.setItem("upgradePriceAutoclicker", upgradePriceAutoclicker);
+    localStorage.setItem("upgradesAutoclicker", upgradesAutoclicker);
+    localStorage.setItem("ammountAutoclicker", ammountAutoclicker);
+    localStorage.setItem("upgradePricegender", upgradePricegender);
+    localStorage.setItem("upgradesGender", upgradesGender);
+    localStorage.setItem("ammountAutoclickergender", ammountAutoclickergender);
+    localStorage.setItem("qps", qps);
+    localStorage.setItem("qpc", qpc);
+}
+
+function load() {
+    money = localStorage.getItem("earnedMoney");
+    money = parseInt(money);
+    upgradePrice = localStorage.getItem("upgradePrice");
+    upgradePrice = parseInt(upgradePrice);
+    upgrades = localStorage.getItem("upgrades");
+    upgrades = parseInt(upgrades);
+    ammount = localStorage.getItem("ammount");
+    ammount = parseInt(ammount);
+    ammountAutoqueer = localStorage.getItem("ammountAutoqueer");
+    ammountAutoqueer = parseInt(ammountAutoqueer);
+    upgradePriceAutoclicker = localStorage.getItem("upgradePriceAutoclicker");
+    upgradePriceAutoclicker = parseInt(upgradePriceAutoclicker);
+    upgradesAutoclicker = localStorage.getItem("upgradesAutoclicker");
+    upgradesAutoclicker = parseInt(upgradesAutoclicker);
+    ammountAutoclicker = localStorage.getItem("ammountAutoclicker");
+    ammountAutoclicker = parseInt(ammountAutoclicker);
+    upgradePricegender = localStorage.getItem("upgradePricegender");
+    upgradePricegender = parseInt(upgradePricegender);
+    upgradesGender = localStorage.getItem("upgradesGender");
+    upgradesGender = parseInt(upgradesGender);
+    ammountAutoclickergender = localStorage.getItem("ammountAutoclickergender");
+    ammountAutoclickergender = parseInt(ammountAutoclickergender);
+    qps = localStorage.getItem("qps");
+    qps = parseInt(qps);
+    qpc = localStorage.getItem("qpc");
+    qpc = parseInt(qpc);
+    updateMoney();
+    QPS();
+}
