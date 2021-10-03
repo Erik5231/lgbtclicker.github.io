@@ -26,7 +26,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body onload="intervalMoney(), intervalMoney2(), playAudio(), load()">
+<body onload="intervalMoney(), playAudio(), load()">
     <div class="container">
         <script src="script.js"></script>
         <div class="header">
@@ -34,8 +34,10 @@
            <h1>QUEERS: <span id="money">0</span>&#9895</h1>
             <div class="ps">per second: <span id="qps">0</span></div>
             <div class="pc">per click: <span id="qpc">1</span></div>
+            <div class="multi">multiplier: <span id="multi">1</span></div>
+            <div class="clicks">clicks: <span id="clicks">0</span></div>
         </div>
-        <button id="lgbtButton" class="lgbtButton center-element" onclick="addMoney(ammount)">
+        <button id="lgbtButton" class="lgbtButton center-element" onclick="addMoney(ammount), save()">
             +&#9895;
         </button>
 
@@ -50,6 +52,8 @@
             <h1 class="mobileBlock">QUEERS: <span id="money2">0</span>&#9895</h1>
             <div class="ps mobileBlock">per second: <span id="qps2">0</span></div>
             <div class="pc mobileBlock">per click: <span id="qpc2">1</span></div>
+            <div class="multi mobileBlock">multiplier: <span id="multi2">1</span></div>
+            <div class="clicks mobileBlock">clicks: <span id="clicks2">0</span></div>
             <br>
             <img src="img/radman_error.png" height="160" id="raderror" onclick="hideRadek()"/>
             <br>
@@ -61,15 +65,21 @@
             </button>
             <button class="sbutton" onclick="buyAutoclicker1()">
                 <b>Auto-Queer x<span id="upgradesAutoclicker">0</span></b><br>
-                +5QPS
+                +10QPS
                 <br>
                 costs: <span id="upgradePriceAutoclicker">350</span>&#9895;
             </button>
             <button class="sbutton" onclick="buyGender()">
                 <b>GenderFluid x<span id="upgradesGender">0</span></b><br>
-                +20QPS, 5QPC
+                +25QPS, 5QPC
                 <br>
                 costs: <span id="upgradePricegender">2250</span>&#9895;
+            </button>
+            <button class="sbutton" onclick="multiply()">
+                <b>Restart x<span id="upgradesMultiplier">0</span></b><br>
+                Multiplier x1.5
+                <br>
+                costs: <span id="upgradePricemulti">1000000</span>
             </button>
             <button class="ind sbutton" onclick="buyInadaptable()">
                 <b>Inadaptable-Homophobe</b><br>
@@ -81,6 +91,10 @@
             <button id="cheatButton" onclick="cheat(), changeText(), this.disabled = true">
                 <b class="lgtext">Welcome to LGBT Family<3 </b>
             </button>
+            <br>
+            <!--<button id="but" class="spec sbutton" onmousedown="turboStart()" onmouseup="turboEnd()">
+                <b>Hold to get Queers</b>
+            </button> -->
         </div>
     </div>
     <script>
@@ -93,6 +107,19 @@
                 }
                 else {
                     document.getElementById("cheatButton").style.display = "none";
+                }
+            }
+        })
+
+        document.addEventListener("keydown", function () {
+            var x = event.keyCode || event.which;
+            if (x == 13) {
+                var y = document.getElementById("but");
+                if (y.style.display === "none") {
+                    document.getElementById("but").style.display = "block";
+                }
+                else {
+                    document.getElementById("but").style.display = "none";
                 }
             }
         })
