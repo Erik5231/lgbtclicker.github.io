@@ -279,5 +279,5 @@ function turboStart() {
 }
 
 function turboEnd() {
-    clearInterval(turbo);;
+    clearInterval(turbo);
 }

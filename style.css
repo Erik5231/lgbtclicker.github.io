@@ -326,13 +326,14 @@ button:active {
 
 #but {
     display: none;
+    left:350px;
+    top: 15px;
+    background-color: #000;
 }
 
 .spec {
-    position: absolute;
-    left: 50% ;
-    top: 70% ;
-    transform: translate(-50%, -50%);
     display: none;
     margin: 0 auto;
+    height: 15px;
+    width: 15px;
 }
