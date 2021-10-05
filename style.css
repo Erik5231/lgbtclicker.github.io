@@ -175,10 +175,6 @@ button:active {
 }
 
 #cheatButton {
-    position: absolute;
-    left: 50% ;
-    top: 30% ;
-    transform: translate(-50%, -50%);
     display: none;
     margin: 0 auto;
     background: linear-gradient(180deg, #FE0000 16.66%, #FD8C00 16.66%, 33.32%, #FFE500 33.32%, 49.98%, #119F0B 49.98%, 66.64%, #0644B3 66.64%, 83.3%, #C22EDC 83.3%);
