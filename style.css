@@ -333,3 +333,39 @@ button:active {
     height: 15px;
     width: 15px;
 }
+.ja{
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    font-size: 20px;
+text-align: center;position:fixed;
+}
+ 
+ #ja-spim {
+     width: 200px;
+     height: 200px;
+     background: url("ja.png");
+     background-size: cover;
+     float: right;
+     animation: ja-se-menim 2s infinite;
+ 
+ }
+ 
+ @keyframes ja-se-menim {
+     0%, 80% {
+         background: url("ja.png");
+         background-size: cover;
+         width: 200px;
+         height: 200px;
+         background-size: cover;
+         float: right;
+     }
+     81%, 100% {
+         background: url("ja-spim.png");
+         background-size: cover;
+         width: 200px;
+         height: 200px;
+         background-size: cover;
+         float: right;
+     }
+ }
