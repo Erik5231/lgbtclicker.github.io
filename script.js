@@ -83,7 +83,7 @@ function buyAutoclicker1() {
         upgradesAutoclicker++;
         document.getElementById("upgradePriceAutoclicker").innerHTML = upgradePriceAutoclicker;
         document.getElementById("upgradesAutoclicker").innerHTML = upgradesAutoclicker;
-        qps = qps + 5;
+        qps = qps + 10;
     } else {
         showRadek();
     }
@@ -132,7 +132,7 @@ function buyGender() {
         ammount = ammount + 5;
         document.getElementById("upgradePricegender").innerHTML = upgradePricegender;
         document.getElementById("upgradesGender").innerHTML = upgradesGender;
-        qps = qps + 20;
+        qps = qps + 25;
         qpc = qpc + 5;
     } else {
         showRadek();
